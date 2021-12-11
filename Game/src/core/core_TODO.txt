@@ -1,0 +1,2 @@
+- Set focus to input text
+- Set minimum window size

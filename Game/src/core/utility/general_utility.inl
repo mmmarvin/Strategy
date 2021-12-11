@@ -1,0 +1,79 @@
+#include "general_utility.h"
+
+namespace gengine2d
+{
+namespace general_utils
+{
+  template<class T>
+  std::pair<T, T> minmax(T a, T b)
+  {
+    return a < b ? std::make_pair(a, b) : std::make_pair(b, a);
+  }
+
+  template<class T>
+  T clamp(T value, T min, T max)
+  {
+    return value > min ? (value < max ? value : max) : min;
+  }
+
+  template<class T>
+  T min(T a, T b)
+  {
+    return a < b ? a : b;
+  }
+
+  template<class T>
+  T max(T a, T b)
+  {
+    return a > b ? a : b;
+  }
+
+  template<class T>
+  T fast_abs(T t)
+  {
+    return t < 0 ? -t : t;
+  }
+
+  template<class T>
+  T fast_mod(T a, T b)
+  {
+    return a < b ? a : a % b;
+  }
+
+  template<class T>
+  bool is_within_ex(T value, T min, T max)
+  {
+    return value > min && value < max;
+  }
+
+  template<class T>
+  bool is_within_in(T value, T min, T max)
+  {
+    return value >= min && value <= max;
+  }
+
+  template<class T>
+  bool is_within_lin(T value, T min, T max)
+  {
+    return value >= min && value < max;
+  }
+
+  template<class T>
+  bool is_within_rin(T value, T min, T max)
+  {
+    return value > min && value <= max;
+  }
+
+  template<class T, class S>
+  T* static_cast_to_ptr_type(S* v)
+  {
+    return static_cast<T*>(static_cast<void*>(v));
+  }
+
+  template<class T, class S>
+  const T* static_cast_to_ptr_type(const S* v)
+  {
+    return static_cast<const T*>(static_cast<const void*>(v));
+  }
+}
+}
